@@ -65,20 +65,20 @@ jobs:
         # k3s-version: https://github.com/rancher/k3s/tags
         # k3s-channel: https://update.k3s.io/v1-release/channels
         include:
-          - k3s-channel: v1.20
-            test: install
+          #- k3s-channel: v1.20
+          #  test: install
             # FIXME: stop accepting failure when 1.20.3 is available for k3s and
             #        this issue is resolved:
             #        https://github.com/jupyterhub/zero-to-jupyterhub-k8s/issues/1962
-            accept-failure: true
+          #  accept-failure: true
           - k3s-channel: v1.19
             test: install
-          - k3s-channel: v1.18
-            test: install
-          - k3s-channel: v1.17
-            test: install
-          - k3s-channel: v1.16
-            test: install
+          #- k3s-channel: v1.18
+          #  test: install
+          #- k3s-channel: v1.17
+          #  test: install
+          #- k3s-channel: v1.16
+          #  test: install
 
           # We run two upgrade tests where we first install an already released
           # Helm chart version and then upgrades to the version we are now
@@ -220,4 +220,4 @@ jobs:
         uses: jupyterhub/action-k8s-namespace-report@v1
         if: always()
         with:
-          important-workloads: deploy/hub deploy/proxy
+          important-workloads: deploy/hub deploy/proxy deploy/autohttps deploy/pebble
