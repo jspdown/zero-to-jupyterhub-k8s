@@ -48,9 +48,6 @@ entryPoints:
   https:
     address: ':8443'
     # Configure a high idle timeout for our websockets connections
-    transport:
-      respondingTimeouts:
-        idleTimeout: 10m0s
 
 # Config of logs about what happens to Traefik itself (startup,
 # configuration, events, shutdown, and so on).
